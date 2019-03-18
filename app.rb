@@ -1,16 +1,15 @@
 require 'sinatra'
 
-# get '/' do
-#   "Hello Kitty"
-# end
+get '/' do
+  "Hello Kitty"
+end
 
 get '/random-cat' do
-  @cat = ["Amigo", "Oscar", "Viking"].sample
+  @name = ["Amigo", "Oscar", "Viking"].sample
   erb(:index)
 end
 
 get '/named-cat' do
-  p params
-  @cat = params[:name]
+  @name = params[:name]
   erb(:index)
 end
